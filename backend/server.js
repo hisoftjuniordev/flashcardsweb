@@ -6,7 +6,9 @@ require('dotenv').config();
 const app = express();
 
 // Srednja oprema (Middleware)
-app.use(cors());
+app.use(cors({
+  origin: 'https://flashcards-igra.onrender.com' // Tvoj Frontend naslov iz 3. koraka
+}));
 app.use(express.json());
 
 // Povezava z MongoDB - naslov beremo iz .env datoteke
