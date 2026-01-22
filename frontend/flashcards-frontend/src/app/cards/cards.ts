@@ -17,10 +17,10 @@ export class CardsComponent implements OnInit {
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
-    // Klic tvojega lokalnega backenda
-    this.http.get<any[]>('http://localhost:3000/api/cards').subscribe(data => {
-      this.cards = data;
-    });
+    // Zamenjaj localhost z naslovom, ki ga vidiš na Renderju
+this.http.get<any[]>('https://flashcardsweb.onrender.com/api/cards').subscribe(data => {
+  this.cards = data;
+});
   }
 
   flipCard() {
