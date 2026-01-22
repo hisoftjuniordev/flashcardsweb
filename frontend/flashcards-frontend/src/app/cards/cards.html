@@ -1,0 +1,20 @@
+<div class="game-container" *ngIf="cards.length > 0">
+  <div class="flashcard-wrapper" (click)="flipCard()">
+    <div class="flashcard" [class.flipped]="isFlipped">
+      <div class="card-face front">
+        <h3>{{ cards[currentIndex].term }}</h3>
+        <p class="hint">Klikni za definicijo</p>
+      </div>
+      <div class="card-face back">
+        <p>{{ cards[currentIndex].definition }}</p>
+      </div>
+    </div>
+  </div>
+
+  <button class="next-btn" (click)="nextCard($event)">Naslednji pojem →</button>
+  <p class="counter">{{ currentIndex + 1 }} / {{ cards.length }}</p>
+</div>
+
+<div *ngIf="cards.length === 0" class="loading">
+  Nalagam podatke o plačah...
+</div>
